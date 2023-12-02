@@ -1,6 +1,3 @@
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=solanki-parin&label=Profile%20views&color=0e75b6&style=flat" alt="solanki-parin" /> </p>
-
-
  ### About Me 🚀
 
 🎓 Hi there! I'm Parin Solanki, a BCA student with a passion for coding and technology. 

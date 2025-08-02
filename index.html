@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Unreal Engine Game Programmer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Alex Chen</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#plugins" class="nav-link">Plugins</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Unreal Engine Game Programmer</h1>
+                <p class="hero-subtitle">Crafting immersive gaming experiences through code and creativity</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Projects Shipped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Marketplace Plugins</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#plugins" class="btn btn-secondary">Browse Plugins</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-buttons">
+                            <span class="btn-red"></span>
+                            <span class="btn-yellow"></span>
+                            <span class="btn-green"></span>
+                        </div>
+                        <span class="window-title">GameLogic.cpp</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>class APlayerController : public AController
+{
+    GENERATED_BODY()
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void HandlePlayerInput();
+    
+    UFUNCTION(BlueprintCallable)
+    void UpdateGameState();
+    
+protected:
+    virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Unreal Engine game programmer with over 5 years of experience creating interactive experiences. I specialize in C++ programming, Blueprint systems, and developing marketplace plugins that help other developers bring their visions to life.</p>
+                    <p>My expertise includes gameplay programming, AI systems, networking, optimization, and creating reusable plugin architectures. I love solving complex technical challenges and pushing the boundaries of what's possible in Unreal Engine.</p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Unreal Engine 5</span>
+                            <span class="skill-tag">Blueprint</span>
+                            <span class="skill-tag">Gameplay Programming</span>
+                            <span class="skill-tag">AI Systems</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Performance Optimization</span>
+                            <span class="skill-tag">Plugin Development</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Perforce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Alex Chen</h3>
+                        <p>Senior Game Programmer</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/2a2a2a/ffffff?text=Cyberpunk+RPG" alt="Cyberpunk RPG">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cyberpunk RPG</h3>
+                        <p>An open-world RPG featuring advanced AI systems, dynamic weather, and procedurally generated quests. Built with Unreal Engine 5 and custom C++ systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unreal Engine 5</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/2a2a2a/ffffff?text=Multiplayer+FPS" alt="Multiplayer FPS">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multiplayer FPS</h3>
+                        <p>Fast-paced multiplayer shooter with advanced weapon systems, player progression, and real-time networking. Features custom matchmaking and anti-cheat systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unreal Engine 4</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">Multiplayer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/2a2a2a/ffffff?text=VR+Adventure" alt="VR Adventure">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>VR Adventure Game</h3>
+                        <p>Immersive VR experience with hand tracking, physics interactions, and spatial audio. Optimized for high frame rates and low latency.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unreal Engine 5</span>
+                            <span class="tech-tag">VR</span>
+                            <span class="tech-tag">Physics</span>
+                            <span class="tech-tag">Audio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/2a2a2a/ffffff?text=Procedural+World" alt="Procedural World">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-play"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Procedural World Generator</h3>
+                        <p>Advanced procedural generation system creating infinite worlds with biomes, weather systems, and dynamic ecosystems. Built with custom algorithms and optimization techniques.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unreal Engine 5</span>
+                            <span class="tech-tag">Procedural</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plugins Section -->
+    <section id="plugins" class="plugins">
+        <div class="container">
+            <h2 class="section-title">Marketplace Plugins</h2>
+            <div class="plugins-grid">
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h3>Advanced AI Behavior Tree</h3>
+                            <div class="plugin-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(127 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Comprehensive AI behavior tree system with advanced decision making, pathfinding, and squad coordination. Perfect for RTS and strategy games.</p>
+                    <div class="plugin-features">
+                        <span class="feature-tag">Behavior Trees</span>
+                        <span class="feature-tag">Pathfinding</span>
+                        <span class="feature-tag">Squad AI</span>
+                    </div>
+                    <div class="plugin-footer">
+                        <span class="plugin-price">$29.99</span>
+                        <a href="#" class="btn btn-small">View Plugin</a>
+                    </div>
+                </div>
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h3>Multiplayer Framework</h3>
+                            <div class="plugin-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(89 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Complete multiplayer solution with lobby system, matchmaking, player synchronization, and anti-cheat protection.</p>
+                    <div class="plugin-features">
+                        <span class="feature-tag">Networking</span>
+                        <span class="feature-tag">Matchmaking</span>
+                        <span class="feature-tag">Anti-Cheat</span>
+                    </div>
+                    <div class="plugin-footer">
+                        <span class="plugin-price">$49.99</span>
+                        <a href="#" class="btn btn-small">View Plugin</a>
+                    </div>
+                </div>
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h3>Inventory System Pro</h3>
+                            <div class="plugin-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(203 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Advanced inventory system with drag-and-drop, crafting, equipment slots, and save/load functionality. Highly customizable and optimized.</p>
+                    <div class="plugin-features">
+                        <span class="feature-tag">Inventory</span>
+                        <span class="feature-tag">Crafting</span>
+                        <span class="feature-tag">UI</span>
+                    </div>
+                    <div class="plugin-footer">
+                        <span class="plugin-price">$19.99</span>
+                        <a href="#" class="btn btn-small">View Plugin</a>
+                    </div>
+                </div>
+
+                <div class="plugin-card">
+                    <div class="plugin-header">
+                        <div class="plugin-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="plugin-info">
+                            <h3>Performance Profiler</h3>
+                            <div class="plugin-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(67 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Real-time performance monitoring tool with detailed analytics, bottleneck detection, and optimization recommendations.</p>
+                    <div class="plugin-features">
+                        <span class="feature-tag">Profiling</span>
+                        <span class="feature-tag">Analytics</span>
+                        <span class="feature-tag">Optimization</span>
+                    </div>
+                    <div class="plugin-footer">
+                        <span class="plugin-price">$39.99</span>
+                        <a href="#" class="btn btn-small">View Plugin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Whether you need help with game development, custom plugins, or technical consulting, I'd love to hear from you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>alex.chen@gameprogrammer.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                    <div class="social-links-large">
+                        <a href="#" class="social-link-large"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link-large"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link-large"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link-large"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Alex Chen</h3>
+                    <p>Unreal Engine Game Programmer</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#plugins">Plugins</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alex Chen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

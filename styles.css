@@ -6,20 +6,20 @@
 }
 
 :root {
-    --primary-color: #00ff88;
-    --secondary-color: #ff6b35;
-    --accent-color: #4ecdc4;
-    --dark-bg: #0a0a0a;
-    --darker-bg: #050505;
-    --card-bg: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-muted: #666666;
-    --border-color: #333333;
-    --gradient-primary: linear-gradient(135deg, #00ff88 0%, #4ecdc4 100%);
-    --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-    --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --primary-color: #0891b2; /* Cyan-blue */
+  --secondary-color: #06b6d4;
+  --accent-color: #22d3ee;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --card-bg: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  --border-color: #333333;
+  --gradient-primary: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  --shadow-glow: 0 0 20px rgba(8, 145, 178, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -195,29 +195,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
 }
 
-.hero-stats {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: 'Orbitron', monospace;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -262,27 +239,40 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* Code Window */
+/* =========================================
+   ENHANCED CODE WINDOW STYLES (VS Code Look)
+   ========================================= */
 .code-window {
-    background: var(--card-bg);
-    border-radius: 10px;
+    background: rgba(30, 30, 30, 0.95); /* VS Code Dark background */
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5), /* Deep shadow */
+        0 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle border */
     overflow: hidden;
-    box-shadow: var(--shadow-card);
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); /* Slight 3D tilt */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     border: 1px solid var(--border-color);
 }
 
+.code-window:hover {
+    transform: perspective(1000px) rotateY(0) rotateX(0); /* Flatten on hover */
+    box-shadow: 
+        0 20px 50px rgba(8, 145, 178, 0.2), /* Cyan glow */
+        0 0 0 1px var(--primary-color);
+}
+
 .window-header {
-    background: var(--darker-bg);
-    padding: 10px 15px;
+    background: #252526;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #333;
 }
 
 .window-buttons {
     display: flex;
     gap: 8px;
+    margin-right: 20px;
 }
 
 .btn-red, .btn-yellow, .btn-green {
@@ -295,27 +285,62 @@ h1, h2, h3, h4, h5, h6 {
 .btn-yellow { background: #ffbd2e; }
 .btn-green { background: #27ca3f; }
 
-.window-title {
-    color: var(--text-secondary);
+.window-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
     font-size: 0.9rem;
-    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.code-container {
+    display: flex;
+    background: #1e1e1e;
+}
+
+.line-numbers {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 20px 20px;
+    background: #1e1e1e;
+    color: #6e7681;
+    border-right: 1px solid #333;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: right;
+    user-select: none;
+}
+
+.line-numbers span {
+    display: block;
 }
 
 .code-content {
     padding: 20px;
+    flex-grow: 1;
 }
 
 .code-content pre {
     margin: 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #d4d4d4;
+    overflow-x: auto;
 }
 
-.code-content code {
-    color: var(--text-primary);
-}
+/* Syntax Highlighting */
+.code-content .keyword { color: #569cd6; font-weight: bold; }
+.code-content .class-name { color: #4ec9b0; }
+.code-content .macro { color: #c586c0; }
+.code-content .function { color: #dcdcaa; }
+.code-content .property { color: #9cdcfe; }
+.code-content .string { color: #ce9178; }
+.code-content .comment { color: #6a9955; }
 
+/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -646,20 +671,23 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', monospace;
 }
 
-/* Contact Section */
+/* Contact Section (Centered) */
 .contact {
     padding: 100px 0;
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 4rem;
 }
 
 .contact-info h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 .contact-info p {
@@ -674,6 +702,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
 }
@@ -685,6 +714,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-links-large {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -845,6 +875,12 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
         gap: 2rem;
     }
+    
+    /* Code Window Mobile Fix */
+    .code-window {
+        transform: none; /* Remove 3D effect on mobile */
+        margin-top: 2rem;
+    }
 
     .hero-title {
         font-size: 2.5rem;
@@ -860,8 +896,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .contact-content {
-        grid-template-columns: 1fr;
         gap: 2rem;
+        justify-items: center;
+    }
+    
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+        text-align: center;
     }
 
     .projects-grid,
@@ -932,4 +974,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
-} 
+}

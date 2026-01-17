@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Chen - Unreal Engine Game Programmer</title>
+    <title>Solanki Parin - Unreal Engine Game Programmer</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +14,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-gamepad"></i>
-                <span>Alex Chen</span>
+                <span>Solanki Parin</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -37,54 +37,48 @@
             <div class="hero-text">
                 <h1 class="hero-title">Unreal Engine Game Programmer</h1>
                 <p class="hero-subtitle">Crafting immersive gaming experiences through code and creativity</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">12+</span>
-                        <span class="stat-label">Projects Shipped</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">8</span>
-                        <span class="stat-label">Marketplace Plugins</span>
-                    </div>
-                </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#plugins" class="btn btn-secondary">Browse Plugins</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-window">
-                    <div class="window-header">
-                        <div class="window-buttons">
-                            <span class="btn-red"></span>
-                            <span class="btn-yellow"></span>
-                            <span class="btn-green"></span>
-                        </div>
-                        <span class="window-title">GameLogic.cpp</span>
-                    </div>
-                    <div class="code-content">
-                        <pre><code>class APlayerController : public AController
-{
-    GENERATED_BODY()
-    
-public:
-    UFUNCTION(BlueprintCallable)
-    void HandlePlayerInput();
-    
-    UFUNCTION(BlueprintCallable)
-    void UpdateGameState();
-    
-protected:
-    virtual void BeginPlay() override;
-    virtual void Tick(float DeltaTime) override;
-};</code></pre>
-                    </div>
-                </div>
+    <div class="code-window">
+        <div class="window-header">
+            <div class="window-buttons">
+                <span class="btn-red"></span>
+                <span class="btn-yellow"></span>
+                <span class="btn-green"></span>
             </div>
+            <div class="window-title-wrapper">
+                <i class="fas fa-file-code"></i>
+                <span class="window-title">GameLogic.cpp</span>
+            </div>
+        </div>
+        <div class="code-container">
+            <div class="line-numbers">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+            </div>
+            <div class="code-content">
+                <pre><code><span class="keyword">class</span> <span class="class-name">ACustomPlayerController</span> : <span class="keyword">public</span> <span class="class-name">APlayerController</span>
+{
+    <span class="macro">GENERATED_BODY</span>()
+    
+<span class="keyword">public:</span>
+    <span class="macro">UFUNCTION</span>(<span class="property">BlueprintCallable</span>)
+    <span class="keyword">void</span> <span class="function">HandlePlayerInput</span>();
+    
+    <span class="macro">UFUNCTION</span>(<span class="property">BlueprintCallable</span>)
+    <span class="keyword">void</span> <span class="function">UpdateGameState</span>();
+    
+<span class="keyword">protected:</span>
+    <span class="keyword">virtual void</span> <span class="function">BeginPlay</span>() <span class="keyword">override</span>;
+    <span class="keyword">virtual void</span> <span class="function">Tick</span>(<span class="keyword">float</span> DeltaTime) <span class="keyword">override</span>;
+};</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
@@ -97,7 +91,7 @@ protected:
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate Unreal Engine game programmer with over 5 years of experience creating interactive experiences. I specialize in C++ programming, Blueprint systems, and developing marketplace plugins that help other developers bring their visions to life.</p>
+                    <p>I'm a passionate Unreal Engine game programmer with over 2.5 years of experience creating interactive experiences. I specialize in C++ programming, Blueprint systems, and developing marketplace plugins that help other developers bring their visions to life.</p>
                     <p>My expertise includes gameplay programming, AI systems, networking, optimization, and creating reusable plugin architectures. I love solving complex technical challenges and pushing the boundaries of what's possible in Unreal Engine.</p>
                     <div class="skills">
                         <h3>Technical Skills</h3>
@@ -111,7 +105,6 @@ protected:
                             <span class="skill-tag">Performance Optimization</span>
                             <span class="skill-tag">Plugin Development</span>
                             <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Perforce</span>
                         </div>
                     </div>
                 </div>
@@ -120,12 +113,11 @@ protected:
                         <div class="profile-avatar">
                             <i class="fas fa-user"></i>
                         </div>
-                        <h3>Alex Chen</h3>
-                        <p>Senior Game Programmer</p>
+                        <h3>Solanki Parin</h3>
+                        <p>Game Programmer</p>
                         <div class="social-links">
                             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -366,7 +358,7 @@ protected:
                             <i class="fas fa-envelope"></i>
                             <span>alex.chen@gameprogrammer.com</span>
                         </div>
-                        <div class="contact-item">
+                        <!--<div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>+1 (555) 123-4567</span>
                         </div>
@@ -374,29 +366,14 @@ protected:
                             <i class="fas fa-map-marker-alt"></i>
                             <span>San Francisco, CA</span>
                         </div>
+                        -->
                     </div>
                     <div class="social-links-large">
                         <a href="#" class="social-link-large"><i class="fab fa-github"></i></a>
                         <a href="#" class="social-link-large"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link-large"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link-large"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
@@ -406,7 +383,7 @@ protected:
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Alex Chen</h3>
+                    <h3>Solanki Parin</h3>
                     <p>Unreal Engine Game Programmer</p>
                 </div>
                 <div class="footer-section">
@@ -423,13 +400,12 @@ protected:
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Alex Chen. All rights reserved.</p>
+                <p>&copy; 2026 Solanki Parin. All rights reserved.</p>
             </div>
         </div>
     </footer>

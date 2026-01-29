@@ -12,9 +12,9 @@
   --dark-bg: #0a0a0a;
   --darker-bg: #050505;
   --card-bg: #1a1a1a;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-muted: #666666;
+  --text-primary: #f0f9ff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   --border-color: #333333;
   --gradient-primary: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
   --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
@@ -195,6 +195,40 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
 }
 
+/* Center the experience text */
+.stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: 'Orbitron', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Ensure the entire hero stats section is centered */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center; /* Center all stats */
+  align-items: center;
+}
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -240,16 +274,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   ENHANCED CODE WINDOW STYLES (VS Code Look)
+   ENHANCED CODE WINDOW STYLES (Colorful IDE)
    ========================================= */
 .code-window {
-    background: rgba(30, 30, 30, 0.95); /* VS Code Dark background */
+    background: #1e1e1e; /* Neutral IDE Background */
     border-radius: 12px;
     box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.5), /* Deep shadow */
-        0 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle border */
+        0 20px 50px rgba(0, 0, 0, 0.6), 
+        0 0 0 1px rgba(255, 255, 255, 0.05);
     overflow: hidden;
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); /* Slight 3D tilt */
+    /* RETAIN THE 3D EFFECT */
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     border: 1px solid var(--border-color);
 }
@@ -257,12 +292,12 @@ h1, h2, h3, h4, h5, h6 {
 .code-window:hover {
     transform: perspective(1000px) rotateY(0) rotateX(0); /* Flatten on hover */
     box-shadow: 
-        0 20px 50px rgba(8, 145, 178, 0.2), /* Cyan glow */
+        0 20px 60px rgba(34, 211, 238, 0.15), /* Vibrant cyan glow */
         0 0 0 1px var(--primary-color);
 }
 
 .window-header {
-    background: #252526;
+    background: #252526; /* Neutral Dark Header */
     padding: 12px 20px;
     display: flex;
     align-items: center;
@@ -281,9 +316,9 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
 }
 
-.btn-red { background: #ff5f56; }
-.btn-yellow { background: #ffbd2e; }
-.btn-green { background: #27ca3f; }
+.btn-red { background: #ff5555; box-shadow: 0 0 5px #ff5555; }
+.btn-yellow { background: #f1fa8c; box-shadow: 0 0 5px #f1fa8c; }
+.btn-green { background: #50fa7b; box-shadow: 0 0 5px #50fa7b; }
 
 .window-title-wrapper {
     display: flex;
@@ -292,11 +327,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #999;
     font-size: 0.9rem;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 .code-container {
     display: flex;
-    background: #1e1e1e;
+    background: #1e1e1e; /* Neutral Dark Container */
 }
 
 .line-numbers {
@@ -311,6 +347,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
     text-align: right;
     user-select: none;
+    opacity: 0.7;
 }
 
 .line-numbers span {
@@ -327,18 +364,40 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #d4d4d4;
+    color: #f8f8f2; /* Default Light Text */
     overflow-x: auto;
 }
 
-/* Syntax Highlighting */
-.code-content .keyword { color: #569cd6; font-weight: bold; }
-.code-content .class-name { color: #4ec9b0; }
-.code-content .macro { color: #c586c0; }
-.code-content .function { color: #dcdcaa; }
-.code-content .property { color: #9cdcfe; }
-.code-content .string { color: #ce9178; }
-.code-content .comment { color: #6a9955; }
+/* VIBRANT SYNTAX HIGHLIGHTING - IDE STYLE */
+.code-content .keyword { 
+    color: #ff79c6; /* Neon Pink */
+    font-weight: bold; 
+}
+
+.code-content .class-name { 
+    color: #8be9fd; /* Bright Cyan */
+    font-style: italic;
+}
+
+.code-content .macro { 
+    color: #bd93f9; /* Vibrant Purple */
+}
+
+.code-content .function { 
+    color: #50fa7b; /* Bright Green */
+}
+
+.code-content .property { 
+    color: #ffb86c; /* Orange */
+}
+
+.code-content .string { 
+    color: #f1fa8c; /* Yellow */
+}
+
+.code-content .comment { 
+    color: #6272a4; /* Blue-Grey */
+}
 
 /* Scroll Indicator */
 .scroll-indicator {
@@ -974,4 +1033,21 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
 }

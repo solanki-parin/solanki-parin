@@ -399,10 +399,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #6272a4; /* Blue-Grey */
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator - Adjusted Position */
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 10px; /* Changed from 30px to 10px to move it down */
     left: 50%;
     transform: translateX(-50%);
     color: var(--primary-color);
@@ -482,6 +482,13 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto 1rem;
     font-size: 2rem;
     color: var(--dark-bg);
+}
+
+.profile-avatar img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .profile-card h3 {
@@ -906,7 +913,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-muted);
 }
 
-/* Responsive Design */
+/* =========================================
+   RESPONSIVE DESIGN FIXES
+   ========================================= */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -915,18 +924,28 @@ h1, h2, h3, h4, h5, h6 {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 0; /* Cover full screen from top */
+        padding-top: 80px; /* Space for the hamburger/logo row */
         flex-direction: column;
         background-color: var(--darker-bg);
         width: 100%;
+        height: 100vh; /* Full height */
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
     }
 
     .nav-menu.active {
         left: 0;
+    }
+
+    /* FIX: Hero Section Mobile Overflow */
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding-top: 120px; /* Push content down below navbar */
+        padding-bottom: 60px;
+        overflow: visible; /* Allow content to flow naturally */
     }
 
     .hero-content {
@@ -935,14 +954,15 @@ h1, h2, h3, h4, h5, h6 {
         gap: 2rem;
     }
     
-    /* Code Window Mobile Fix */
-    .code-window {
-        transform: none; /* Remove 3D effect on mobile */
-        margin-top: 2rem;
-    }
-
+    /* FIX: Hero Title Size */
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Reduced from 3.5rem to fit mobile */
+        line-height: 1.2;
+    }
+    
+    /* FIX: Hide Code Window on Mobile */
+    .hero-visual {
+        display: none;
     }
 
     .hero-stats {
@@ -954,15 +974,22 @@ h1, h2, h3, h4, h5, h6 {
         gap: 2rem;
     }
 
+    /* FIX: Contact Section Mobile Sizing */
     .contact-content {
-        gap: 2rem;
-        justify-items: center;
+        gap: 3rem;
+        width: 100%; /* Ensure container takes full width */
     }
     
-    .contact-info,
-    .contact-form {
+    .contact-info {
         max-width: 100%;
         text-align: center;
+        padding: 0 10px; /* Prevent text from hitting screen edges */
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 500px; /* Prevent it from stretching too wide on tablets */
+        margin: 0 auto; /* Center the form */
     }
 
     .projects-grid,
@@ -973,11 +1000,24 @@ h1, h2, h3, h4, h5, h6 {
     .section-title {
         font-size: 2rem;
     }
+    
+    /* FIX: Footer Centering */
+    .footer-content {
+        text-align: center;
+        grid-template-columns: 1fr; /* Stack footer items vertically */
+        gap: 2.5rem;
+    }
+    
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Even smaller for very small screens */
     }
 
     .hero-stats {
@@ -1033,21 +1073,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
-}
-
-.profile-avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-avatar img {
-  width: 85%;
-  height: 85%;
-  border-radius: 50%;
-  object-fit: cover;
 }

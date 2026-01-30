@@ -155,6 +155,8 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
     position: relative;
     overflow: hidden;
+    /* Adjusted padding bottom to give arrow space */
+    padding-bottom: 40px; 
 }
 
 .hero::before {
@@ -399,10 +401,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #6272a4; /* Blue-Grey */
 }
 
-/* Scroll Indicator - Adjusted Position */
+/* Scroll Indicator - FIX: Lowered position */
 .scroll-indicator {
     position: absolute;
-    bottom: 10px; /* Changed from 30px to 10px to move it down */
+    bottom: 10px; /* Moved down to avoid touching buttons */
     left: 50%;
     transform: translateX(-50%);
     color: var(--primary-color);
@@ -916,7 +918,9 @@ h1, h2, h3, h4, h5, h6 {
 /* =========================================
    RESPONSIVE DESIGN FIXES
    ========================================= */
-@media (max-width: 768px) {
+
+/* Tablet & Mobile Styles (Max Width 1024px covers iPads) */
+@media (max-width: 1024px) {
     .hamburger {
         display: flex;
     }
@@ -944,7 +948,7 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto;
         height: auto;
         padding-top: 120px; /* Push content down below navbar */
-        padding-bottom: 60px;
+        padding-bottom: 80px; /* FIX: Increased bottom padding so arrow has room */
         overflow: visible; /* Allow content to flow naturally */
     }
 
@@ -960,13 +964,19 @@ h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
     }
     
-    /* FIX: Hide Code Window on Mobile */
+    /* FIX: Hide Code Window on Mobile AND iPad */
     .hero-visual {
         display: none;
     }
 
     .hero-stats {
         justify-content: center;
+    }
+    
+    /* FIX: Center Buttons Row */
+    .hero-buttons {
+        justify-content: center;
+        width: 100%;
     }
 
     .about-content {

@@ -269,32 +269,78 @@ if (heroStats) {
     statsObserver.observe(heroStats);
 }
 
-// Code window typing effect
+// ==========================================
+// FIXED: Colorful Code Typing Animation
+// ==========================================
 function animateCodeTyping() {
     const codeElement = document.querySelector('.code-content code');
     if (!codeElement) return;
     
-    const originalCode = codeElement.textContent;
-    codeElement.textContent = '';
-    
-    let i = 0;
-    const typeSpeed = 50;
-    
-    function typeCode() {
-        if (i < originalCode.length) {
-            codeElement.textContent += originalCode.charAt(i);
-            i++;
-            setTimeout(typeCode, typeSpeed);
+    // 1. Snapshot the nodes (structure + text) to preserve colors
+    const nodes = Array.from(codeElement.childNodes).map(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            return { type: 'text', content: node.textContent };
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            return { 
+                type: 'element', 
+                tagName: node.tagName, 
+                className: node.className, 
+                content: node.textContent 
+            };
+        }
+        return null;
+    }).filter(n => n);
+
+    // 2. Clear content
+    codeElement.innerHTML = '';
+
+    let nodeIndex = 0;
+    let charIndex = 0;
+    let currentElement = null; // Can be a text node or a span element
+    const typeSpeed = 20; // Faster speed looks better for code
+
+    function type() {
+        if (nodeIndex >= nodes.length) return;
+
+        const node = nodes[nodeIndex];
+
+        // Create the element if we haven't started typing this node yet
+        if (!currentElement) {
+            if (node.type === 'text') {
+                currentElement = document.createTextNode('');
+                codeElement.appendChild(currentElement);
+            } else {
+                currentElement = document.createElement(node.tagName);
+                currentElement.className = node.className; // Apply color class (keyword, etc.)
+                codeElement.appendChild(currentElement);
+            }
+        }
+
+        // Type character
+        if (charIndex < node.content.length) {
+            currentElement.textContent += node.content.charAt(charIndex);
+            charIndex++;
+            // Slightly random typing speed for realism
+            setTimeout(type, typeSpeed + Math.random() * 20);
+        } else {
+            // Move to next node
+            nodeIndex++;
+            charIndex = 0;
+            currentElement = null;
+            setTimeout(type, typeSpeed);
         }
     }
-    
+
     // Start typing after a delay
-    setTimeout(typeCode, 2000);
+    setTimeout(type, 1500);
 }
 
 // Initialize code typing animation
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(animateCodeTyping, 1000);
+    // Only run animation on non-mobile devices to save resources
+    if (window.innerWidth > 1024) {
+        animateCodeTyping();
+    }
 });
 
 // Smooth reveal animation for sections
@@ -429,4 +475,4 @@ loadingStyles.textContent = `
         100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 `;
-document.head.appendChild(loadingStyles); 
+document.head.appendChild(loadingStyles);
